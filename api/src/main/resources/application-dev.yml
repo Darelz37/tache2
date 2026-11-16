@@ -1,0 +1,21 @@
+# Profil DEV : vraies valeurs pour tout lancer en local, sans Docker.
+# Ces valeurs correspondent à scripts/init-db.sql et scripts/s3-dev.json.
+# Ne jamais réutiliser ces secrets en production.
+logging:
+  level:
+    root: info
+    cm.proclama: info
+
+app:
+  database-url: postgres://proclama:proclama@localhost:5432/proclama
+  db-pool-size: 10
+  s3-endpoint: http://localhost:8333
+  s3-bucket: proclama
+  s3-access-key: proclamaaccess
+  s3-secret-key: proclamasecretkey2026
+  jwt-secret: dev-only-secret-change-me-at-least-32-chars
+  enable-debug: true
+  rate-limit-per-min: 1000
+  worker-interval-seconds: 2
+  bootstrap-admin-email: admin@proclama.local
+  bootstrap-admin-password: admin123

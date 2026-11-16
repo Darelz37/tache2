@@ -1,0 +1,26 @@
+# Configuration commune à tous les profils.
+#
+# Le profil actif est choisi par la variable d'environnement SPRING_PROFILES_ACTIVE :
+#   - absente -> "dev"  : application-dev.yml  (vraies valeurs, démarrage local)
+#   - "prod"            : application-prod.yml (placeholders ${...} remplis à l'exécution)
+spring:
+  application:
+    name: proclama
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  main:
+    banner-mode: "off"
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 11MB
+server:
+  port: ${PORT:8080}
+  shutdown: graceful
+  tomcat:
+    threads:
+      max: 100
+app:
+  mode: ${APP_MODE:api}
+  app-version: ${APP_VERSION:dev}
+  instance-name: ${INSTANCE_NAME:${HOSTNAME:local}}

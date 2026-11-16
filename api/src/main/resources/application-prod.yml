@@ -1,0 +1,24 @@
+# Profil PROD : AUCUNE valeur réelle ici, uniquement des placeholders ${NOM} ou ${NOM:défaut}.
+# Les valeurs sont fournies à l'exécution (variables d'environnement du conteneur),
+# avec SPRING_PROFILES_ACTIVE=prod.
+# Un placeholder sans défaut est obligatoire : s'il manque, l'API refuse de démarrer.
+logging:
+  structured:
+    format:
+      console: logstash
+  level:
+    root: ${LOG_LEVEL:info}
+
+app:
+  database-url: ${DATABASE_URL}
+  db-pool-size: ${DB_POOL_SIZE:10}
+  s3-endpoint: ${S3_ENDPOINT}
+  s3-bucket: ${S3_BUCKET:proclama}
+  s3-access-key: ${S3_ACCESS_KEY}
+  s3-secret-key: ${S3_SECRET_KEY}
+  jwt-secret: ${JWT_SECRET}
+  enable-debug: ${ENABLE_DEBUG:false}
+  rate-limit-per-min: ${RATE_LIMIT_PER_MIN:30}
+  worker-interval-seconds: ${WORKER_INTERVAL_SECONDS:5}
+  bootstrap-admin-email: ${BOOTSTRAP_ADMIN_EMAIL:admin@proclama.local}
+  bootstrap-admin-password: ${BOOTSTRAP_ADMIN_PASSWORD:}

@@ -1,0 +1,11 @@
+{
+  "identities": [
+    {
+      "name": "proclama",
+      "credentials": [
+        { "accessKey": "proclamaaccess", "secretKey": "proclamasecretkey2026" }
+      ],
+      "actions": ["Admin", "Read", "Write", "List", "Tagging"]
+    }
+  ]
+}
